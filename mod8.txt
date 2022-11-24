@@ -1,0 +1,17 @@
+begin
+
+       PROCESS(c,r)
+       begin
+       if (r='1')
+            then q <="000";
+        elsif ( c='1' )
+		  
+            then q <= q+1;
+		
+        end if ;
+        end process;
+
+
+
+end Behavioral;
+
