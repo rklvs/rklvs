@@ -1,0 +1,43 @@
+d 30
+clk
+rst
+q inout30
+
+m10
+
+
+
+
+
+
+
+
+begin
+
+
+
+process (clk, rst)
+
+begin
+
+if Ist='1' then
+
+q<= "0000";
+
+elsif clk'event and clk='1' then
+
+case m is
+
+when "00" => q<=d
+
+When "01" => q<= q(2 downto 0) & d(0);
+
+when "10" => q<= d(3) & q(3 downto 1);
+
+when others => q<= "0000"
+
+end case;
+
+end if;
+
+end Process;
