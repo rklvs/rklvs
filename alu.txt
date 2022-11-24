@@ -1,0 +1,30 @@
+begin
+PROCESS(a,b,sel)
+BEGIN
+
+CASE SEL IS 
+WHEN "000" =>
+         Y<= a AND b;
+WHEN "001" =>
+         Y<= a OR b;
+WHEN "010" =>
+         Y<= a NAND b;
+WHEN "011" =>
+         Y<= a NOR b;
+WHEN "100" =>
+         Y<= a XOR b;
+WHEN "101" =>
+         Y<= a XNOR b;
+WHEN "110" =>
+         Y<= NOT a;
+WHEN "111" =>
+         Y<= NOT b;
+WHEN OTHERS =>
+         NULL;
+
+END CASE;
+END PROCESS;
+
+
+
+end behavioral;
